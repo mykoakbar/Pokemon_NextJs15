@@ -69,6 +69,7 @@ const Hero: React.FC<Hero> = ({ nama }) => {
                 <div className="flex justify-center items-end text-black rounded-full h-full bg-white">
                     {Data?.sprites.other.showdown.front_default ?
                         LoadingDetail ?
+                            // return null 
                             <></>
                             :
                             <div className="hover:scale-150 hover:mb-5 duration-100">
