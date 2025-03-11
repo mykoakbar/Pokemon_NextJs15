@@ -56,7 +56,7 @@ export default function Home() {
         <div className="pl-4">
           {Data?.previous &&
             <button
-              onClick={() => setPage((prev) => prev - 8)}
+              onClick={() => setPage((prev) => prev - 18)}
               type="button"
               disabled={LoadingPage}
               className="uppercase font-bold border rounded-xl border-white px-5 py-2 hover:bg-white hover:text-red-400 cursor-pointer"
@@ -68,7 +68,7 @@ export default function Home() {
         <div className="pr-4">
           {Data?.next &&
             <button
-              onClick={() => setPage((prev) => prev + 8)}
+              onClick={() => setPage((prev) => prev + 18)}
               type="button"
               disabled={LoadingPage}
               className="uppercase font-bold border rounded-xl border-white px-5 py-2 hover:bg-white hover:text-red-400 cursor-pointer"
