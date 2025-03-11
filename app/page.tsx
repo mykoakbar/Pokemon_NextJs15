@@ -45,7 +45,7 @@ export default function Home() {
   return (
     <>
       {/* SCREEN */}
-      <h1 className="absolute font-bold text-4xl ml-3 mt-3 text-white">{PageNumber}</h1>
+      <h1 className="absolute p-5 bg-white font-bold text-4xl ml-3 mt-3 rounded-full text-red-400">{PageNumber}</h1>
       <div className="flex flex-wrap gap-2 items-center justify-center min-h-screen p-5 bg-[#1D1616]">
         {Data?.results.map((item: results, index: number) => (
           <div className="flex gap-1" key={index}>
@@ -54,38 +54,40 @@ export default function Home() {
             />
           </div>
         ))}
-      </div>
-      {/* FOOTER NEXT PREV */}
-      <div className={`flex bottom-0 top-0 left-0 right-0 sticky justify-between items-center w-full rounded-4xl p-5 text-white ${LoadingPage ? 'animate-pulse bg-red-900' : 'bg-red-400'}`}>
-        <div className="pl-4">
-          {Data?.previous &&
-            <button
-              onClick={() => {
-                setPage((prev) => prev - 18);
-                setPageNumber((prev) => prev - 1);
-              }}
-              type="button"
-              disabled={LoadingPage}
-              className="uppercase font-bold border rounded-xl border-white px-5 py-2 hover:bg-white hover:text-red-400 cursor-pointer"
-            >
-              prev
-            </button>
-          }
-        </div>
-        <div className="pr-4">
-          {Data?.next &&
-            <button
-              onClick={() => {{
-                setPage((prev) => prev + 18);
-                setPageNumber((prev) => prev + 1);
-              }}}
-              type="button"
-              disabled={LoadingPage}
-              className="uppercase font-bold border rounded-xl border-white px-5 py-2 hover:bg-white hover:text-red-400 cursor-pointer"
-            >
-              next
-            </button>
-          }
+        {/* FOOTER NEXT PREV */}
+        <div className={`flex justify-between items-center w-full rounded-4xl p-5 text-white ${LoadingPage ? 'animate-pulse bg-red-900' : 'bg-red-400'}`}>
+          <div className="pl-4">
+            {Data?.previous &&
+              <button
+                onClick={() => {
+                  setPage((prev) => prev - 18);
+                  setPageNumber((prev) => prev - 1);
+                }}
+                type="button"
+                disabled={LoadingPage}
+                className="uppercase font-bold border rounded-xl border-white px-5 py-2 hover:bg-white hover:text-red-400 cursor-pointer"
+              >
+                prev
+              </button>
+            }
+          </div>
+          <div className="pr-4">
+            {Data?.next &&
+              <button
+                onClick={() => {
+                  {
+                    setPage((prev) => prev + 18);
+                    setPageNumber((prev) => prev + 1);
+                  }
+                }}
+                type="button"
+                disabled={LoadingPage}
+                className="uppercase font-bold border rounded-xl border-white px-5 py-2 hover:bg-white hover:text-red-400 cursor-pointer"
+              >
+                next
+              </button>
+            }
+          </div>
         </div>
       </div>
     </>
